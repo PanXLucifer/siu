@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArchiHome - Jasa Desain Arsitektur Rumah Online</title>
+    <meta
+      name="description"
+      content="Pesan desain arsitektur rumah secara online. Dari sketsa hingga gambar kerja lengkap, dikerjakan oleh arsitek profesional."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <!-- Navbar -->
+    <header class="sticky top-0 z-40 bg-white border-b border-gray-200 backdrop-blur-sm">
+      <div class="container mx-auto px-4 lg:px-6">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
+              A
+            </div>
+            <span class="text-lg font-semibold">ArchiHome</span>
+          </div>
+          <nav class="hidden md:flex items-center gap-6 text-sm text-gray-600">
+            <a href="#layanan" class="hover:text-gray-900 transition">Layanan</a>
+            <a href="#proses" class="hover:text-gray-900 transition">Proses</a>
+            <a href="#portofolio" class="hover:text-gray-900 transition">Portofolio</a>
+            <a href="#testimoni" class="hover:text-gray-900 transition">Testimoni</a>
+            <a href="#harga" class="hover:text-gray-900 transition">Harga</a>
+          </nav>
+          <div class="hidden md:flex items-center gap-3">
+            <a href="auth/login.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition">
+              Login
+            </a>
+            <a href="auth/register.html" class="px-4 py-2 text-sm font-medium bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
+              Daftar
+            </a>
+          </div>
+          <button class="md:hidden p-2" id="mobileMenuBtn">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden pb-4" id="mobileMenu">
+          <nav class="flex flex-col gap-3">
+            <a href="#layanan" class="text-gray-600 hover:text-gray-900">Layanan</a>
+            <a href="#proses" class="text-gray-600 hover:text-gray-900">Proses</a>
+            <a href="#portofolio" class="text-gray-600 hover:text-gray-900">Portofolio</a>
+            <a href="#testimoni" class="text-gray-600 hover:text-gray-900">Testimoni</a>
+            <a href="#harga" class="text-gray-600 hover:text-gray-900">Harga</a>
+            <div class="pt-2 border-t">
+              <a href="auth/login.html" class="block py-2 text-gray-600 hover:text-gray-900">Login</a>
+              <a href="auth/register.html" class="block py-2 text-blue-600 font-medium">Daftar</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="py-12 lg:py-20 bg-white" id="beranda">
+        <div class="container mx-auto px-4 lg:px-6">
+          <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div>
+              <span class="inline-block px-3 py-1 text-xs font-medium text-blue-600 bg-blue-50 rounded-full mb-4">
+                Jasa Desain Arsitektur Rumah Online
+              </span>
+              <h1 class="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+                Wujudkan Rumah Impian
+                <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Tanpa Keluar Rumah
+                </span>
+              </h1>
+              <p class="text-gray-600 mb-6 text-lg">
+                Konsultasi langsung dengan arsitek profesional, dapatkan desain 3D dan gambar kerja lengkap
+                hanya dalam beberapa hari. Cocok untuk rumah baru, renovasi, maupun kost.
+              </p>
+              <div class="flex flex-wrap gap-3 mb-8">
+                <a href="#form-pemesanan" class="px-6 py-3 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition">
+                  Mulai Konsultasi Gratis
+                </a>
+                <a href="#portofolio" class="px-6 py-3 border border-gray-300 text-gray-700 rounded-full font-medium hover:bg-gray-50 transition">
+                  Lihat Contoh Desain
+                </a>
+              </div>
+              <div class="flex flex-wrap gap-6">
+                <div>
+                  <div class="text-2xl font-semibold">250+</div>
+                  <div class="text-sm text-gray-600">Proyek Selesai</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-semibold">4.9/5</div>
+                  <div class="text-sm text-gray-600">Rating Klien</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-semibold">7+</div>
+                  <div class="text-sm text-gray-600">Tahun Pengalaman</div>
+                </div>
+              </div>
+            </div>
+            <div class="relative">
+              <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-6 shadow-xl">
+                <div class="flex justify-between items-center mb-4">
+                  <span class="text-sm text-white/80">Desain Rumah Minimalis 2 Lantai</span>
+                  <span class="px-3 py-1 text-xs bg-green-500/20 text-green-200 rounded-full border border-green-400/30">
+                    Selesai
+                  </span>
+                </div>
+                <div class="bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg h-48 mb-4 flex items-center justify-center">
+                  <img src="https://via.placeholder.com/400x300/3B82F6/FFFFFF?text=Desain+Rumah" alt="Desain Rumah" class="rounded-lg w-full h-full object-cover" />
+                </div>
+                <div class="flex justify-between items-center">
+                  <div>
+                    <p class="text-white font-medium">Luas Tanah 8 x 15 m</p>
+                    <p class="text-white/70 text-sm">3 Kamar Tidur • 2 Kamar Mandi • Carport</p>
+                  </div>
+                  <a href="#form-pemesanan" class="px-4 py-2 text-sm bg-white/20 text-white rounded-full hover:bg-white/30 transition">
+                    Pesan Mirip
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Layanan Section -->
+      <section class="py-16 bg-gray-50" id="layanan">
+        <div class="container mx-auto px-4 lg:px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Layanan Desain yang Kami Sediakan</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+              Pilih jenis layanan sesuai kebutuhan rumah Anda. Semuanya mencakup konsultasi online
+              dan revisi sesuai paket.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+              <h3 class="text-xl font-semibold mb-3">Desain Konsep 3D</h3>
+              <p class="text-gray-600 mb-4">
+                Visualisasi 3D eksterior dan tata ruang awal untuk membantu Anda membayangkan bentuk rumah.
+              </p>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  Gambar perspektif 3D
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  Tata letak ruangan (layout)
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  1x revisi minor
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+              <h3 class="text-xl font-semibold mb-3">Paket Gambar Kerja Lengkap</h3>
+              <p class="text-gray-600 mb-4">
+                Paket lengkap siap bangun berisi gambar denah, tampak, potongan, dan detail struktur.
+              </p>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  Denah, tampak, potongan
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  Detail struktur & utilitas dasar
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  2x revisi minor
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+              <h3 class="text-xl font-semibold mb-3">Desain Interior Rumah</h3>
+              <p class="text-gray-600 mb-4">
+                Desain interior ruang tamu, kamar tidur, dapur, hingga ruang kerja dengan 3D realistis.
+              </p>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  3D interior tiap ruangan
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  Saran material & warna
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  Daftar perkiraan furnitur
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Proses Section -->
+      <section class="py-16 bg-white" id="proses">
+        <div class="container mx-auto px-4 lg:px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Proses Pemesanan Desain yang Sederhana</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+              Semua proses dilakukan secara online, namun tetap personal dan terarah.
+            </p>
+          </div>
+          <div class="max-w-3xl mx-auto space-y-4">
+            <div class="flex gap-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-100">
+              <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold flex-shrink-0">
+                1
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">Isi Form Kebutuhan</h3>
+                <p class="text-sm text-gray-600">
+                  Ceritakan kebutuhan, ukuran tanah, jumlah kamar, dan referensi desain rumah impian Anda.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-100">
+              <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold flex-shrink-0">
+                2
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">Konsultasi dengan Arsitek</h3>
+                <p class="text-sm text-gray-600">
+                  Arsitek kami akan menghubungi Anda via WhatsApp/Zoom untuk diskusi lebih detail.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-100">
+              <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold flex-shrink-0">
+                3
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">Terima Konsep & Revisi</h3>
+                <p class="text-sm text-gray-600">
+                  Kami kirimkan konsep awal, lalu Anda dapat memberikan masukan untuk disesuaikan.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-100">
+              <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold flex-shrink-0">
+                4
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">Final Desain Siap Bangun</h3>
+                <p class="text-sm text-gray-600">
+                  Setelah disetujui, Anda akan menerima file lengkap dalam format PDF/CAD siap ke kontraktor.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portofolio Section -->
+      <section class="py-16 bg-gray-50" id="portofolio">
+        <div class="container mx-auto px-4 lg:px-6">
+          <div class="flex justify-between items-end mb-8">
+            <div>
+              <h2 class="text-3xl font-bold mb-2">Portofolio Pilihan</h2>
+              <p class="text-gray-600">
+                Beberapa contoh desain rumah yang pernah kami kerjakan untuk klien di berbagai kota.
+              </p>
+            </div>
+            <a href="#form-pemesanan" class="hidden md:block px-4 py-2 border border-gray-300 rounded-full text-sm font-medium hover:bg-gray-50 transition">
+              Minta Contoh Lengkap
+            </a>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200">
+              <div class="h-48 bg-gradient-to-br from-blue-400 to-green-500">
+                <img src="https://via.placeholder.com/400x300/3B82F6/FFFFFF?text=Rumah+Minimalis" alt="Rumah Minimalis" class="w-full h-full object-cover" />
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold mb-1">Rumah Minimalis 2 Lantai</h3>
+                <p class="text-sm text-gray-600">Kavling 7 x 15 m • Bandung</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200">
+              <div class="h-48 bg-gradient-to-br from-pink-400 to-orange-500">
+                <img src="https://via.placeholder.com/400x300/F472B6/FFFFFF?text=Rumah+Tropis" alt="Rumah Tropis" class="w-full h-full object-cover" />
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold mb-1">Rumah Tropis Modern</h3>
+                <p class="text-sm text-gray-600">Hook 10 x 20 m • Surabaya</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200">
+              <div class="h-48 bg-gradient-to-br from-purple-400 to-indigo-500">
+                <img src="https://via.placeholder.com/400x300/A855F7/FFFFFF?text=Rumah+Scandinavian" alt="Rumah Scandinavian" class="w-full h-full object-cover" />
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold mb-1">Rumah Scandinavian</h3>
+                <p class="text-sm text-gray-600">Cluster 8 x 12 m • Jakarta</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimoni Section -->
+      <section class="py-16 bg-white" id="testimoni">
+        <div class="container mx-auto px-4 lg:px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Kata Klien Kami</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+              Pengalaman nyata dari pemilik rumah yang sudah bekerja sama dengan kami.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-100">
+              <p class="text-sm text-gray-700 mb-4">
+                "Prosesnya sangat jelas dan terstruktur. Dari awal konsultasi sampai gambar kerja final, kami selalu
+                dilibatkan. Hasil desainnya jauh di atas ekspektasi."
+              </p>
+              <p class="text-sm font-medium">— Bapak Andi, Bandung</p>
+            </div>
+            <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-100">
+              <p class="text-sm text-gray-700 mb-4">
+                "Suka banget sama desain 3D-nya, jadi lebih yakin sebelum mulai bangun. Komunikasi via WhatsApp juga
+                sangat responsif."
+              </p>
+              <p class="text-sm font-medium">— Ibu Rina, Tangerang</p>
+            </div>
+            <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-100">
+              <p class="text-sm text-gray-700 mb-4">
+                "Tim arsitek membantu menyesuaikan desain dengan budget kami tanpa mengurangi kenyamanan ruang."
+              </p>
+              <p class="text-sm font-medium">— Keluarga Ardi, Yogyakarta</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Harga Section -->
+      <section class="py-16 bg-gray-50" id="harga">
+        <div class="container mx-auto px-4 lg:px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Paket Harga Desain Rumah</h2>
+            <p class="text-gray-600">Pilih paket sesuai kebutuhan dan tahap pembangunan Anda.</p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+              <h3 class="text-xl font-semibold mb-2">Paket Basic</h3>
+              <p class="text-2xl font-bold mb-1">Rp 1.250.000</p>
+              <p class="text-sm text-gray-600 mb-4">Cocok untuk desain konsep awal.</p>
+              <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  Denah tata ruang
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  1 tampak depan 3D
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  1x revisi minor
+                </li>
+              </ul>
+              <a href="#form-pemesanan" class="block w-full text-center px-4 py-2 border border-gray-300 rounded-full text-sm font-medium hover:bg-gray-50 transition">
+                Pilih Paket Basic
+              </a>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-lg border-2 border-blue-500 transform -translate-y-2">
+              <div class="inline-block px-3 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full mb-4">
+                Paling Populer
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Paket Standar</h3>
+              <p class="text-2xl font-bold mb-1">Rp 2.750.000</p>
+              <p class="text-sm text-gray-600 mb-4">Lengkap untuk rumah tinggal keluarga.</p>
+              <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  Denah, tampak, potongan
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  2 view 3D eksterior
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  2x revisi minor
+                </li>
+              </ul>
+              <a href="#form-pemesanan" class="block w-full text-center px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium hover:bg-blue-700 transition">
+                Pilih Paket Standar
+              </a>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+              <h3 class="text-xl font-semibold mb-2">Paket Premium</h3>
+              <p class="text-2xl font-bold mb-1">Rp 4.500.000</p>
+              <p class="text-sm text-gray-600 mb-4">Untuk desain detail dan siap bangun.</p>
+              <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  Gambar kerja lengkap
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  3D eksterior & 2 ruang interior
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  3x revisi minor
+                </li>
+              </ul>
+              <a href="#form-pemesanan" class="block w-full text-center px-4 py-2 border border-gray-300 rounded-full text-sm font-medium hover:bg-gray-50 transition">
+                Pilih Paket Premium
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Form Pemesanan Section -->
+      <section class="py-16 bg-white" id="form-pemesanan">
+        <div class="container mx-auto px-4 lg:px-6">
+          <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-8">
+              <h2 class="text-3xl font-bold mb-4">Isi Form untuk Mulai Konsultasi</h2>
+              <p class="text-gray-600">
+                Lengkapi data berikut, tim arsitek kami akan menghubungi Anda maksimal 1x24 jam
+                melalui WhatsApp atau email.
+              </p>
+            </div>
+            <form class="bg-white rounded-xl p-8 shadow-sm border border-gray-200" id="orderForm" novalidate>
+              <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label for="nama" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                  <input
+                    type="text"
+                    id="nama"
+                    name="nama"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Contoh: Budi Santoso"
+                    required
+                  />
+                  <small class="text-red-500 text-xs hidden error-msg"></small>
+                </div>
+                <div>
+                  <label for="whatsapp" class="block text-sm font-medium text-gray-700 mb-1">No. WhatsApp</label>
+                  <input
+                    type="tel"
+                    id="whatsapp"
+                    name="whatsapp"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Contoh: 0812xxxxxxx"
+                    required
+                  />
+                  <small class="text-red-500 text-xs hidden error-msg"></small>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email (opsional)</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="nama@email.com"
+                  />
+                  <small class="text-red-500 text-xs hidden error-msg"></small>
+                </div>
+                <div>
+                  <label for="lokasi" class="block text-sm font-medium text-gray-700 mb-1">Lokasi Proyek</label>
+                  <input
+                    type="text"
+                    id="lokasi"
+                    name="lokasi"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Kota / Kabupaten (contoh: Jakarta Timur)"
+                    required
+                  />
+                  <small class="text-red-500 text-xs hidden error-msg"></small>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label for="luas" class="block text-sm font-medium text-gray-700 mb-1">Ukuran/Luas Tanah</label>
+                  <input
+                    type="text"
+                    id="luas"
+                    name="luas"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Contoh: 8 x 15 m atau 120 m²"
+                    required
+                  />
+                  <small class="text-red-500 text-xs hidden error-msg"></small>
+                </div>
+                <div>
+                  <label for="paket" class="block text-sm font-medium text-gray-700 mb-1">Pilih Paket</label>
+                  <select
+                    id="paket"
+                    name="paket"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    required
+                  >
+                    <option value="">Pilih paket desain</option>
+                    <option value="Basic">Paket Basic</option>
+                    <option value="Standar">Paket Standar</option>
+                    <option value="Premium">Paket Premium</option>
+                    <option value="Kostum">Diskusi Dulu (Khusus)</option>
+                  </select>
+                  <small class="text-red-500 text-xs hidden error-msg"></small>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="kebutuhan" class="block text-sm font-medium text-gray-700 mb-1">Ceritakan Singkat Kebutuhan Anda</label>
+                <textarea
+                  id="kebutuhan"
+                  name="kebutuhan"
+                  rows="4"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  placeholder="Contoh: Rumah 2 lantai untuk keluarga 4 orang, 3 kamar tidur, 1 ruang kerja, konsep minimalis modern..."
+                  required
+                ></textarea>
+                <small class="text-red-500 text-xs hidden error-msg"></small>
+              </div>
+              <button
+                type="submit"
+                class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition"
+              >
+                Kirim & Jadwalkan Konsultasi
+              </button>
+              <p class="text-xs text-gray-500 mt-3 text-center">
+                Dengan mengirim form ini, Anda menyetujui untuk dihubungi oleh tim kami terkait
+                layanan desain arsitektur.
+              </p>
+              <div id="formSuccess" class="hidden mt-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 text-sm">
+                Terima kasih! Data Anda sudah kami terima. Kami akan menghubungi Anda maksimal 1x24 jam.
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12">
+      <div class="container mx-auto px-4 lg:px-6 py-8">
+        <div class="grid md:grid-cols-4 gap-8 mb-6">
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
+                A
+              </div>
+              <span class="text-lg font-semibold">ArchiHome</span>
+            </div>
+            <p class="text-sm text-gray-600">
+              Platform pemesanan desain arsitektur rumah online untuk membantu Anda merencanakan
+              hunian impian dengan lebih mudah.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3">Layanan</h4>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li><a href="#layanan" class="hover:text-gray-900">Desain Konsep</a></li>
+              <li><a href="#layanan" class="hover:text-gray-900">Gambar Kerja</a></li>
+              <li><a href="#layanan" class="hover:text-gray-900">Desain Interior</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3">Bantuan</h4>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li><a href="#proses" class="hover:text-gray-900">Cara Kerja</a></li>
+              <li><a href="#form-pemesanan" class="hover:text-gray-900">Konsultasi</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3">Kontak</h4>
+            <p class="text-sm text-gray-600">WhatsApp: 08xx-xxxx-xxxx</p>
+            <p class="text-sm text-gray-600">Email: halo@archihome.id</p>
+          </div>
+        </div>
+        <div class="pt-6 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+          <p>© <span id="year"></span> ArchiHome. All rights reserved.</p>
+          <p class="mt-2 md:mt-0">Didesain untuk tampilan desktop & mobile.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
